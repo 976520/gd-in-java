@@ -1,23 +1,24 @@
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class Camera {
-    private int cameraXPosition;
-    private int cameraViewportWidth;
+    private int x;
+    private int width;
 
-    public Camera(int cameraViewportWidth) {
-        this.cameraXPosition = 0;
-        this.cameraViewportWidth = cameraViewportWidth;
+    public Camera(int width) {
+        this.x = 0;
+        this.width = width;
     }
 
-    public void updateCameraPosition(int playerCharacterXPosition) {
-        cameraXPosition = playerCharacterXPosition - cameraViewportWidth / 2;
+    public void updateCamera(int playerX) {
+        x = playerX - width / 2;
     }
 
-    public void applyTranslation(Graphics graphics) {
-        ((Graphics2D) graphics).translate(-cameraXPosition, 0);
+    public void translateCamera(Graphics g) {
+        ((Graphics2D) g).translate(-x, 0);
     }
 
-    public int getXPosition() {
-        return cameraXPosition;
+    public int getX() {
+        return x;
     }
 }

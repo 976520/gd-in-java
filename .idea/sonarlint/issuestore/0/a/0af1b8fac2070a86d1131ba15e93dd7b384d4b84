@@ -1,15 +1,25 @@
 
 Š
-java:S21842"BCast one of the operands of this addition operation to a "double".(­ÁÀ‡þÿÿÿÿ8Ñè´†ž2J$0e044975-85e6-40c7-9b79-307844dd7fd8
+java:S2184J"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8÷ò·‡ž2J$e3efd845-20b9-4292-97e9-a0aacce4c82e
 Š
-java:S21842"BCast one of the operands of this addition operation to a "double".(­ÁÀ‡þÿÿÿÿ8Ñè´†ž2J$23a9897c-f620-40d6-bcc4-e53eee7f8c2d
-…
-java:S21844"BCast one of the operands of this addition operation to a "double".(¾‹¦º8Ñè´†ž2J$965dd0c4-287c-424b-a44c-18a17c50192c
-…
-java:S21844"BCast one of the operands of this addition operation to a "double".(¾‹¦º8Ñè´†ž2J$92103023-88e4-4329-b5d6-c8167374e16e
- 	java:S116"YRename this field "ROTATION_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÁ¸ìøÿÿÿÿ8Øè´†ž2J$78d56973-6279-41ae-8716-30318f153411
-—	java:S116"URename this field "MOVE_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ×¢“8Øè´†ž2J$57717b92-c7fe-4d18-aa47-1175c8fd003c
+java:S2184J"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8÷ò·‡ž2J$bc9a2345-82a2-470b-9183-71b50afb7e8e
+„
+java:S2184L"BCast one of the operands of this addition operation to a "double".(ªë¿8÷ò·‡ž2J$bd5dd645-41de-4d06-9de9-08900738e7e0
+„
+java:S2184L"BCast one of the operands of this addition operation to a "double".(ªë¿8÷ò·‡ž2J$e6a6dff7-0932-44c6-8462-4aff779c14f5
+ 	java:S116"YRename this field "ROTATION_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÁ¸ìøÿÿÿÿ8Çó²‡ž2J$c6ba784f-9350-4518-a8e4-1a6d34522ffd
+—	java:S116"URename this field "MOVE_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ×¢“8Èó²‡ž2J$7259f0d2-578a-4cd2-b2c6-8b0b205edcc2
+¦	java:S116"_Rename this field "NORMAL_JUMP_VELOCITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â²ŽÎøÿÿÿÿ8Èó²‡ž2J$0e016c96-cc26-48e7-a807-0756eee6cdca
+¢	java:S116"`Rename this field "BOOSTED_JUMP_VELOCITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÛÿŒ8Èó²‡ž2J$f1606cd0-542b-4556-9f3e-7860c73924f4
 i
-java:S1170"!Make this final field static too.(ÑÁ¸ìøÿÿÿÿ8Ùè´†ž2J$bee1179c-edf5-452c-886c-a106ab17f07d
+java:S1170"!Make this final field static too.(ÑÁ¸ìøÿÿÿÿ8Èó²‡ž2J$549ad2ab-2fd1-47ad-b519-7168cb4e8438
 d
-java:S1170"!Make this final field static too.(ˆ×¢“8Ùè´†ž2J$a222d216-bce2-47ae-a639-65a62022ef32
+java:S1170"!Make this final field static too.(ˆ×¢“8Èó²‡ž2J$71bf47a0-11a6-40a3-8811-7f738aa23be7
+i
+java:S1170"!Make this final field static too.(â²ŽÎøÿÿÿÿ8Èó²‡ž2J$f0343777-e7a4-4a2e-bfc3-601259187abe
+d
+java:S1170"!Make this final field static too.(ïÛÿŒ8Èó²‡ž2J$d624ba55-92e8-409a-9ba5-d61d90b2a89c
+g
+java:S1659"Declare "y" on a separate line.(±šß¯ùÿÿÿÿ8Êó²‡ž2J$a67f2af5-68d7-46dd-bec4-b883f35a4dfb
+g
+java:S1659"$Declare "height" on a separate line.(·îŠá8Êó²‡ž2J$5ab886f7-0b06-4467-a88e-9144fe78d7bd
