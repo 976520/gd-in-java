@@ -1,25 +1,27 @@
 
 Š
-java:S2184J"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8÷ò·‡2J$e3efd845-20b9-4292-97e9-a0aacce4c82e
+java:S2184I"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8±ÙŠ2J$95abda0f-4a25-44b0-9cb9-1aea26dc11fc
 Š
-java:S2184J"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8÷ò·‡2J$bc9a2345-82a2-470b-9183-71b50afb7e8e
+java:S2184I"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8±ÙŠ2J$b37e8188-70c0-4093-afeb-10c9fd1bb441
 „
-java:S2184L"BCast one of the operands of this addition operation to a "double".(ªë¿8÷ò·‡2J$bd5dd645-41de-4d06-9de9-08900738e7e0
+java:S2184K"BCast one of the operands of this addition operation to a "double".(ªë¿8±ÙŠ2J$038b8be7-8ab1-4e8a-96f1-6d20b133dbbf
 „
-java:S2184L"BCast one of the operands of this addition operation to a "double".(ªë¿8÷ò·‡2J$e6a6dff7-0932-44c6-8462-4aff779c14f5
- 	java:S116"YRename this field "ROTATION_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÁ¸ìøÿÿÿÿ8Çó²‡2J$c6ba784f-9350-4518-a8e4-1a6d34522ffd
-—	java:S116"URename this field "MOVE_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ×¢“8Èó²‡2J$7259f0d2-578a-4cd2-b2c6-8b0b205edcc2
-¦	java:S116"_Rename this field "NORMAL_JUMP_VELOCITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â²Îøÿÿÿÿ8Èó²‡2J$0e016c96-cc26-48e7-a807-0756eee6cdca
-¢	java:S116"`Rename this field "BOOSTED_JUMP_VELOCITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÛÿŒ8Èó²‡2J$f1606cd0-542b-4556-9f3e-7860c73924f4
+java:S2184K"BCast one of the operands of this addition operation to a "double".(ªë¿8±ÙŠ2J$385b47e1-56a9-4c2d-bf31-4aa30021dc01
+ 	java:S116
+"YRename this field "ROTATION_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÁ¸ìøÿÿÿÿ8šâØŠ2J$a586e6a6-922f-467d-b43f-5004606effdf
+	java:S116"\Rename this field "NORMAL_JUMP_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ‚üñ8›âØŠ2J$c3d5cb2e-4bcb-46f7-8c38-b16b3dec0ce1
+¤	java:S116"]Rename this field "BOOSTED_JUMP_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìşõ³şÿÿÿÿ8›âØŠ2J$c72cf3a9-1349-46be-8ce8-6e1d85dc34d8
+—	java:S116"URename this field "MOVE_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ×¢“8›âØŠ2J$8604ed3c-9d58-4c79-9b76-d445947bf071
 i
-java:S1170"!Make this final field static too.(ÑÁ¸ìøÿÿÿÿ8Èó²‡2J$549ad2ab-2fd1-47ad-b519-7168cb4e8438
+java:S1170
+"!Make this final field static too.(ÑÁ¸ìøÿÿÿÿ8›âØŠ2J$573bc133-9f43-4297-bad6-59c69de8b639
 d
-java:S1170"!Make this final field static too.(ˆ×¢“8Èó²‡2J$71bf47a0-11a6-40a3-8811-7f738aa23be7
+java:S1170"!Make this final field static too.(Õ‚üñ8›âØŠ2J$a08bec1f-2a57-4a63-9ae4-ddcfbf19a28e
 i
-java:S1170"!Make this final field static too.(â²Îøÿÿÿÿ8Èó²‡2J$f0343777-e7a4-4a2e-bfc3-601259187abe
+java:S1170"!Make this final field static too.(Ìşõ³şÿÿÿÿ8›âØŠ2J$428752e9-4639-4327-99bb-fbbf8461bb31
 d
-java:S1170"!Make this final field static too.(ïÛÿŒ8Èó²‡2J$d624ba55-92e8-409a-9ba5-d61d90b2a89c
+java:S1170"!Make this final field static too.(ˆ×¢“8âØŠ2J$a4baa814-2de7-4fe9-9d0f-fda2cd826e99
 g
-java:S1659"Declare "y" on a separate line.(±šß¯ùÿÿÿÿ8Êó²‡2J$a67f2af5-68d7-46dd-bec4-b883f35a4dfb
+java:S1659"Declare "y" on a separate line.(±šß¯ùÿÿÿÿ8âØŠ2J$07a419e4-e9bb-4093-a0d8-76d1596853cd
 g
-java:S1659"$Declare "height" on a separate line.(·îŠá8Êó²‡2J$5ab886f7-0b06-4467-a88e-9144fe78d7bd
+java:S1659"$Declare "height" on a separate line.(·îŠá8âØŠ2J$c1984672-c1fd-4640-87bf-873da2226d00

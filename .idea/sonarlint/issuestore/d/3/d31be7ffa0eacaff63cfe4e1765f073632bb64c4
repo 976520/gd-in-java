@@ -1,11 +1,9 @@
 
-N
-java:S1948"1Make "playerCharacter" transient or serializable.(Ãûã8·×Ì‡2
-T
-java:S1948"7Make "obstacleManagerSystem" transient or serializable.(Ú“ÔÜ8¸×Ì‡2
+t
+java:S1948"1Make "playerCharacter" transient or serializable.(Ãûã8Ÿ½ôŠ2J$a8ac8ff9-9fc9-4da4-8648-a63ee9f364f5
+z
+java:S1948"7Make "obstacleManagerSystem" transient or serializable.(Ú“ÔÜ8Á€‹2J$2723bb0a-a3b1-4e8b-9b2a-c1c05b04c45c
 q
-java:S1948".Make "cameraSystem" transient or serializable.(ÇÎæº8ÄÙ½‡2J$766cae6b-482f-480a-a3af-a5e031bc3f2f
-O
-java:S1948"-Make "floorObject" transient or serializable.(ÏèÏäúÿÿÿÿ8¸×Ì‡2
-…
-java:S1126d"BReplace this if-then-else statement by a single method invocation.(û»†¥8Ê‘»‡2J$b2feb8f9-7299-4ed2-b2ba-855d3d696be7
+java:S1948".Make "cameraSystem" transient or serializable.(ÇÎæº8 ½ôŠ2J$d0f7351b-8f73-4c5f-a0a4-229d7553b259
+u
+java:S1948"-Make "floorObject" transient or serializable.(ÏèÏäúÿÿÿÿ8 ½ôŠ2J$9587fcb6-4e02-45cb-9d71-7cc4201ce2e1

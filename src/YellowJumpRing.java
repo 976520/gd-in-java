@@ -4,29 +4,34 @@ import java.awt.Rectangle;
 
 public class YellowJumpRing {
     private int x, y;
-    private int width = 30, height = 10;
+    private int width = 20, height = 20;
     private boolean isTouched;
 
-    public YellowJumpRing(int x, int floorY) {
+    public YellowJumpRing(int x, int y) {
         this.x = x;
-        this.y = floorY - height - 20;  // 링의 위치 설정
+        this.y = y;
         this.isTouched = false;
     }
 
-    public void update() {
-        // 필요에 따라 업데이트 로직 추가
+    public boolean isPlayerTouchingRing(Player player) {
+        return getBounds().intersects(player.getBounds());
     }
 
     public void draw(Graphics g) {
         if (isTouched) {
             g.setColor(Color.YELLOW);
-            g.fillOval(x, y, width, height);
+        } else {
+            g.setColor(Color.ORANGE);
         }
+        g.fillOval(x, y, width, height);
     }
 
-    public boolean isPlayerTouchingRing(Player player) {
-        Rectangle ringBounds = new Rectangle(x, y, width, height);
-        return ringBounds.intersects(player.getBounds());
+    public void update() {
+        //상태 업데이트...
+    }
+
+    public Rectangle getBounds() {
+        return new Rectangle(x, y, width, height);
     }
 
     public void setTouched(boolean touched) {

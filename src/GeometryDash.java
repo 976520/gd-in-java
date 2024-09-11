@@ -1,13 +1,13 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
 
 public class GeometryDash extends JPanel implements ActionListener {
     private Timer timer;
     private Player playerCharacter;
     private ObstacleManager obstacleManagerSystem;
     private boolean isGameRunning;
-    private int numberOfAttempts;
+    private int attempts;
     private Camera cameraSystem;
     private Floor floorObject;
 
@@ -17,16 +17,11 @@ public class GeometryDash extends JPanel implements ActionListener {
         initializeGame();
         timer = new Timer(15, this);
         timer.start();
-
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_SPACE && isGameRunning) {
-                    if (playerCharacter.isBoostedJumpAvailable()) {
-                        playerCharacter.performBoostedJump();
-                    } else {
-                        playerCharacter.performNormalJump();
-                    }
+                    playerCharacter.jump();
                 }
             }
         });
@@ -48,45 +43,56 @@ public class GeometryDash extends JPanel implements ActionListener {
         } else {
             resetGame();
         }
-        renderFloor(g);
-        renderAttempts(g);
+        drawFloor(g);
+        drawAttempts(g);
+
+        for (YellowJumpRing ring : obstacleManagerSystem.getJumpRingList()) {
+            ring.draw(g);
+        }
     }
+
 
     private void renderGameObjects(Graphics g) {
         cameraSystem.translateCamera(g);
 
-        playerCharacter.renderPlayer(g);
+        playerCharacter.render(g);
         obstacleManagerSystem.renderObstacles(g);
 
         ((Graphics2D) g).translate(cameraSystem.getX(), 0);
     }
 
-    private void renderFloor(Graphics g) {
+    private void drawFloor(Graphics g) {
         floorObject.renderFloor(g, cameraSystem.getX());
     }
 
-    private void renderAttempts(Graphics g) {
+    private void drawAttempts(Graphics g) {
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.PLAIN, 24));
-        g.drawString("Attempt: " + numberOfAttempts, 10 - cameraSystem.getX(), 30);
+        g.drawString("Attempt: " + attempts, 10 - cameraSystem.getX(), 30);
     }
 
     private void resetGame() {
-        numberOfAttempts++;
+        attempts++;
         initializeGame();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (isGameRunning) {
-            playerCharacter.updatePlayerPosition();
+            playerCharacter.update();
             obstacleManagerSystem.updateObstacles();
             floorObject.updateFloor();
-            cameraSystem.updateCamera(playerCharacter.getXPosition());
+            cameraSystem.updateCamera(playerCharacter.getX());
+
+            for (YellowJumpRing ring : obstacleManagerSystem.getJumpRingList()) {
+                ring.update();
+            }
+
             detectCollisions();
             repaint();
         }
     }
+
 
     private void detectCollisions() {
         for (Obstacle obstacle : obstacleManagerSystem.getObstacleList()) {
@@ -96,14 +102,17 @@ public class GeometryDash extends JPanel implements ActionListener {
             }
         }
 
-        for (YellowJumpRing jumpRing : obstacleManagerSystem.getJumpRingList()) {
-            if (jumpRing.isPlayerTouchingRing(playerCharacter)) {
+        for (YellowJumpRing ring : obstacleManagerSystem.getJumpRingList()) {
+            if (ring.isPlayerTouchingRing(playerCharacter)) {
                 playerCharacter.setBoostedJumpAvailable(true);
+                playerCharacter.jump();
+                ring.setTouched(true);
             } else {
-                playerCharacter.setBoostedJumpAvailable(false);
+                ring.setTouched(false);
             }
         }
     }
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Geometry Dash");
