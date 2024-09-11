@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObstacleManager {
-    private List<Obstacle> obstacles;
+    private List<Spike> obstacles;
     private int floorY;
     private int floorHeight;
 
@@ -15,25 +15,28 @@ public class ObstacleManager {
     }
 
     private void initializeObstacles() {
-        obstacles.add(new Obstacle(900, floorY, floorHeight));
-        obstacles.add(new Obstacle(1400, floorY, floorHeight));
-        obstacles.add(new Obstacle(1440, floorY, floorHeight));
-        obstacles.add(new Obstacle(1480, floorY, floorHeight));
+        obstacles.add(new Spike(900, floorY, floorHeight));
+        obstacles.add(new Spike(1400, floorY, floorHeight));
+        obstacles.add(new Spike(1440, floorY, floorHeight));
+        obstacles.add(new Spike(1480, floorY, floorHeight));
+        obstacles.add(new Spike(2400, floorY, floorHeight));
+        obstacles.add(new Spike(2440, floorY, floorHeight));
+        obstacles.add(new Spike(2480, floorY, floorHeight));
     }
 
     public void updateObstacles() {
-        for (Obstacle obstacle : obstacles) {
+        for (Spike obstacle : obstacles) {
             obstacle.update();
         }
     }
 
     public void renderObstacles(Graphics g) {
-        for (Obstacle obstacle : obstacles) {
+        for (Spike obstacle : obstacles) {
             obstacle.draw(g);
         }
     }
 
-    public List<Obstacle> getObstacles() {
+    public List<Spike> getObstacles() {
         return obstacles;
     }
 }

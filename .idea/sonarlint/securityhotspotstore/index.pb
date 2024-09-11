@@ -1,6 +1,4 @@
 
-=
-src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
 ?
 src/Player.java,0\a\0af1b8fac2070a86d1131ba15e93dd7b384d4b84
 A
@@ -42,9 +40,7 @@ G.idea/sonarlint/issuestore/6/0/60830dcd1d5157a0969f36bce9e7ebe030e41d42,9\8\98
 Q.idea/sonarlint/securityhotspotstore/0/a/0af1b8fac2070a86d1131ba15e93dd7b384d4b84,f\e\fec5146e8f075cfaaf392d198218d0888393a8f8
 
 Q.idea/sonarlint/securityhotspotstore/c/e/ce1dfb5c79c10242db82c6c59f037385838760db,e\1\e1caf301e0f2e4ba78c6af3ed2914a4451ce2a3e
-F
-src/YelloJumpRIng.java,4\1\413dad5a418b6c17f59d0c13dd6d50b54dfc044c
-F
-src/YelloJumpRing.java,5\0\50a3221a77e1efe8e40d8a788cf546ff2a9a44af
 G
 src/YellowJumpRing.java,7\0\70028409d663209699e477b4f95a0aa6da1ca355
+>
+src/Spike.java,8\d\8df5e51cdfd9ed737818bc69511ae48f94bf1f53

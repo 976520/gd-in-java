@@ -5,7 +5,7 @@ public class Floor {
     private int y;
     private int height;
     private int width;
-    private int xOffset = 0;
+    private int xOffset = -300;
 
     public Floor(int y, int height, int width) {
         this.y = y;

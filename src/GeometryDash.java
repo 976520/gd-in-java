@@ -117,14 +117,13 @@ public class GeometryDash extends JPanel implements ActionListener {
     }
 
     private boolean isPlayerCollidingWithObstacle() {
-        for (Obstacle obstacle : obstacleManager.getObstacles()) {
+        for (Spike obstacle : obstacleManager.getObstacles()) {
             if (obstacle.getBounds().intersects(player.getBounds())) {
                 return true;
             }
         }
         return false;
     }
-
 
     private void handleJumpRingCollisions() {
         for (YellowJumpRing ring : jumpRings) {

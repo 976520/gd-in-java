@@ -1,12 +1,12 @@
 
 p
 java:S1948
-"(Make "player" transient or serializable.(Ç¹Ù±úÿÿÿÿ8µšŸ‹2J$65a15ad8-46d3-4d6f-a7e4-d172a8851fb0
+"(Make "player" transient or serializable.(Ç¹Ù±úÿÿÿÿ8µšŸ‹2J$c2e401b2-ca47-4173-88c6-6cd439039b88
 t
-java:S1948"1Make "obstacleManager" transient or serializable.(«Ì®–8˜íì‹2J$72da4e77-1f38-4664-a71d-97e75c832ebd
+java:S1948"1Make "obstacleManager" transient or serializable.(«Ì®–8˜íì‹2J$573627e4-a658-47a0-b478-e3880e675f5d
 p
-java:S1948"(Make "camera" transient or serializable.(Î¬Òúùÿÿÿÿ8µšŸ‹2J$87ce6743-c72c-4c54-b1bd-78ec6d76a61a
+java:S1948"(Make "camera" transient or serializable.(Î¬Òúùÿÿÿÿ8µšŸ‹2J$e82d71f5-9799-467c-ad26-c54d0409c2b9
 o
-java:S1948"'Make "floor" transient or serializable.(ìüÀßÿÿÿÿÿ8µšŸ‹2J$9124ab5f-84f8-4a78-9682-7dd02ee3a61f
+java:S1948"'Make "floor" transient or serializable.(ìüÀßÿÿÿÿÿ8µšŸ‹2J$ab3d730b-6112-488e-a36f-1c411e37ed41
 s
-java:S1948"+Make "jumpRings" transient or serializable.(â—ñşÿÿÿÿ8˜íì‹2J$26b7bab0-8aa3-476b-b48d-3e4defee2e2f
+java:S1948"+Make "jumpRings" transient or serializable.(â—ñşÿÿÿÿ8˜íì‹2J$12510287-6f47-4a06-8128-89c87a9b9c89
