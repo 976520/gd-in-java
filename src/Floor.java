@@ -1,41 +1,41 @@
 import java.awt.*;
 
 public class Floor {
-    private int y;
-    private int height;
-    private int width;
-    private int xOffset = 0;
+    private int floorYPosition;
+    private int floorHeightValue;
+    private int floorWidth;
+    private int xScrollOffset = 0;
 
-    public Floor(int y, int height, int width) {
-        this.y = y;
-        this.height = height;
-        this.width = width;
+    public Floor(int floorYPosition, int floorHeightValue, int floorWidth) {
+        this.floorYPosition = floorYPosition;
+        this.floorHeightValue = floorHeightValue;
+        this.floorWidth = floorWidth;
     }
 
-    public int getY() {
-        return y;
+    public int getYPosition() {
+        return floorYPosition;
     }
 
-    public int getHeight() {
-        return height;
+    public int getHeightValue() {
+        return floorHeightValue;
     }
 
-    public void update() {
-        xOffset -= 5;
-        if (xOffset < -width) {
-            xOffset = 0;
+    public void updateScrolling() {
+        xScrollOffset -= 5;
+        if (xScrollOffset < -floorWidth) {
+            xScrollOffset = 0;
         }
     }
 
-    public void draw(Graphics g, int cameraX) {
-        int startX = xOffset - cameraX % width;
-        for (int x = startX; x < getWidth() + width; x += width) {
-            g.setColor(Color.BLUE);
-            g.fillRect(x, y, width, height);
+    public void renderFloor(Graphics graphics, int cameraXPosition) {
+        int startX = xScrollOffset - cameraXPosition % floorWidth;
+        for (int x = startX; x < getWidth() + floorWidth; x += floorWidth) {
+            graphics.setColor(Color.BLUE);
+            graphics.fillRect(x, floorYPosition, floorWidth, floorHeightValue);
         }
     }
 
     private int getWidth() {
-        return width;
+        return floorWidth;
     }
 }

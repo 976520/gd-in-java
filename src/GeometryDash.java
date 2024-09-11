@@ -3,102 +3,102 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class GeometryDash extends JPanel implements ActionListener {
-    private Timer timer;
-    private Player player;
-    private ObstacleManager obstacleManager;
-    private boolean isRunning;
-    private int attempts;
-    private Camera camera;
-    private Floor floor;
+    private Timer gameTimer;
+    private Player playerCharacter;
+    private ObstacleManager obstacleManagerSystem;
+    private boolean isGameRunning;
+    private int attemptCount;
+    private Camera gameCamera;
+    private Floor gameFloor;
 
     public GeometryDash() {
         setFocusable(true);
         setPreferredSize(new Dimension(800, 400));
-        initGame();
-        timer = new Timer(15, this);
-        timer.start();
+        initializeGameElements();
+        gameTimer = new Timer(15, this);
+        gameTimer.start();
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_SPACE && isRunning) {
-                    player.jump();
+                if (e.getKeyCode() == KeyEvent.VK_SPACE && isGameRunning) {
+                    playerCharacter.performJump();
                 }
             }
         });
     }
 
-    public void initGame() {
-        floor = new Floor(300, 100, getWidth());
-        player = new Player();
-        obstacleManager = new ObstacleManager(floor.getY(), floor.getHeight());
-        camera = new Camera(getWidth());
-        isRunning = true;
+    public void initializeGameElements() {
+        gameFloor = new Floor(300, 100, getWidth());
+        playerCharacter = new Player();
+        obstacleManagerSystem = new ObstacleManager(gameFloor.getYPosition(), gameFloor.getHeightValue());
+        gameCamera = new Camera(getWidth());
+        isGameRunning = true;
     }
 
     @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        if (isRunning) {
-            drawObjects(g);
+    public void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        if (isGameRunning) {
+            renderGameObjects(graphics);
         } else {
-            resetGame();
+            restartGame();
         }
-        drawFloor(g);
-        drawAttempts(g);
+        renderFloor(graphics);
+        renderAttemptCount(graphics);
     }
 
-    private void drawObjects(Graphics g) {
-        camera.translate(g);
+    private void renderGameObjects(Graphics graphics) {
+        gameCamera.applyTranslation(graphics);
 
-        player.draw(g);
-        obstacleManager.draw(g);
+        playerCharacter.renderPlayer(graphics);
+        obstacleManagerSystem.renderObstacles(graphics);
 
-        ((Graphics2D) g).translate(camera.getX(), 0);
+        ((Graphics2D) graphics).translate(gameCamera.getXPosition(), 0);
     }
 
-    private void drawFloor(Graphics g) {
-        floor.draw(g, camera.getX());
+    private void renderFloor(Graphics graphics) {
+        gameFloor.renderFloor(graphics, gameCamera.getXPosition());
     }
 
-    private void drawAttempts(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.setFont(new Font("Arial", Font.PLAIN, 24));
-        g.drawString("Attempt: " + attempts, 10 - camera.getX(), 30);
+    private void renderAttemptCount(Graphics graphics) {
+        graphics.setColor(Color.BLACK);
+        graphics.setFont(new Font("Arial", Font.PLAIN, 24));
+        graphics.drawString("Attempt: " + attemptCount, 10 - gameCamera.getXPosition(), 30);
     }
 
-    private void resetGame() {
-        attempts++;
-        initGame();
+    private void restartGame() {
+        attemptCount++;
+        initializeGameElements();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (isRunning) {
-            player.update();
-            obstacleManager.update();
-            floor.update();
-            camera.update(player.getX());
-            checkCollision();
+        if (isGameRunning) {
+            playerCharacter.updatePlayerPosition();
+            obstacleManagerSystem.updateObstacles();
+            gameFloor.updateScrolling();
+            gameCamera.updateCameraPosition(playerCharacter.getXPosition());
+            detectCollisions();
             repaint();
         }
     }
 
-    private void checkCollision() {
-        for (Obstacle obstacle : obstacleManager.getObstacles()) {
-            if (obstacle.getBounds().intersects(player.getBounds())) {
-                isRunning = false;
+    private void detectCollisions() {
+        for (Obstacle obstacle : obstacleManagerSystem.getObstacleList()) {
+            if (obstacle.getBounds().intersects(playerCharacter.getBounds())) {
+                isGameRunning = false;
                 break;
             }
         }
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Geometry Dash");
-        GeometryDash game = new GeometryDash();
-        frame.add(game);
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        JFrame gameWindow = new JFrame("Geometry Dash Game");
+        GeometryDash gamePanel = new GeometryDash();
+        gameWindow.add(gamePanel);
+        gameWindow.pack();
+        gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gameWindow.setLocationRelativeTo(null);
+        gameWindow.setVisible(true);
     }
 }

@@ -1,21 +1,15 @@
 
 Š
-java:S21840"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8€§¾ÿ2J$804b7bf4-a4d1-4c03-a1df-a97274c046a5
+java:S21842"BCast one of the operands of this addition operation to a "double".(­ÁÀ‡şÿÿÿÿ8Ñè´†2J$0e044975-85e6-40c7-9b79-307844dd7fd8
 Š
-java:S21840"BCast one of the operands of this addition operation to a "double".(ë§Âéüÿÿÿÿ8Š§¾ÿ2J$1a2e58f6-70f6-4021-ba6f-6551e89d9912
-„
-java:S21842"BCast one of the operands of this addition operation to a "double".(ªë¿8’§¾ÿ2J$d35b214e-c43d-4bd5-99cd-6cbc062c76f1
-„
-java:S21842"BCast one of the operands of this addition operation to a "double".(ªë¿8¢§¾ÿ2J$0cc4fe72-7279-4334-a663-f6c6666ef9e7
- 	java:S116	"YRename this field "ROTATION_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÁ¸ìøÿÿÿÿ8Ã§¾ÿ2J$203a7013-28ec-4aeb-9974-b4e37338099d
-—	java:S116
-"URename this field "MOVE_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ×¢“8Ë§¾ÿ2J$7e13c0b8-cf0e-4366-8887-4f4fb72704b2
+java:S21842"BCast one of the operands of this addition operation to a "double".(­ÁÀ‡şÿÿÿÿ8Ñè´†2J$23a9897c-f620-40d6-bcc4-e53eee7f8c2d
+…
+java:S21844"BCast one of the operands of this addition operation to a "double".(¾‹¦º8Ñè´†2J$965dd0c4-287c-424b-a44c-18a17c50192c
+…
+java:S21844"BCast one of the operands of this addition operation to a "double".(¾‹¦º8Ñè´†2J$92103023-88e4-4329-b5d6-c8167374e16e
+ 	java:S116"YRename this field "ROTATION_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÁ¸ìøÿÿÿÿ8Øè´†2J$78d56973-6279-41ae-8716-30318f153411
+—	java:S116"URename this field "MOVE_SPEED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ×¢“8Øè´†2J$57717b92-c7fe-4d18-aa47-1175c8fd003c
 i
-java:S1170	"!Make this final field static too.(ÑÁ¸ìøÿÿÿÿ8Ë§¾ÿ2J$71237e74-5639-4040-9e0c-f95540e3bada
+java:S1170"!Make this final field static too.(ÑÁ¸ìøÿÿÿÿ8Ùè´†2J$bee1179c-edf5-452c-886c-a106ab17f07d
 d
-java:S1170
-"!Make this final field static too.(ˆ×¢“8Ó§¾ÿ2J$34ee7a5e-47cc-40ff-b03b-df72976c98f2
-g
-java:S1659"Declare "y" on a separate line.(±šß¯ùÿÿÿÿ8Áâóı2J$678a89ed-37bd-4473-bd70-8f6bbc8afe85
-g
-java:S1659"$Declare "height" on a separate line.(·îŠá8Ó§¾ÿ2J$6d8a9fc5-cf4c-49a2-b271-29a999a123a4
+java:S1170"!Make this final field static too.(ˆ×¢“8Ùè´†2J$a222d216-bce2-47ae-a639-65a62022ef32

@@ -3,37 +3,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObstacleManager {
-    private List<Obstacle> obstacles;
-    private int floorY;
-    private int floorHeight;
+    private List<Obstacle> obstacleList;
+    private int floorYPosition;
+    private int floorHeightValue;
 
-    public ObstacleManager(int floorY, int floorHeight) {
-        this.floorY = floorY;
-        this.floorHeight = floorHeight;
-        obstacles = new ArrayList<>();
-        initializeObstacles();
+    public ObstacleManager(int floorYPosition, int floorHeightValue) {
+        this.floorYPosition = floorYPosition;
+        this.floorHeightValue = floorHeightValue;
+        obstacleList = new ArrayList<>();
+        setupObstaclePositions();
     }
 
-    private void initializeObstacles() {
-        obstacles.add(new Obstacle(900, floorY, floorHeight));
-        obstacles.add(new Obstacle(1400, floorY, floorHeight));
-        obstacles.add(new Obstacle(1440, floorY, floorHeight));
-        obstacles.add(new Obstacle(1480, floorY, floorHeight));
+    private void setupObstaclePositions() {
+        obstacleList.add(new Obstacle(900, floorYPosition, floorHeightValue));
+        obstacleList.add(new Obstacle(1400, floorYPosition, floorHeightValue));
+        obstacleList.add(new Obstacle(1440, floorYPosition, floorHeightValue));
+        obstacleList.add(new Obstacle(1480, floorYPosition, floorHeightValue));
     }
 
-    public void update() {
-        for (Obstacle obstacle : obstacles) {
-            obstacle.update();
+    public void updateObstacles() {
+        for (Obstacle obstacle : obstacleList) {
+            obstacle.moveObstacle();
         }
     }
 
-    public void draw(Graphics g) {
-        for (Obstacle obstacle : obstacles) {
-            obstacle.draw(g);
+    public void renderObstacles(Graphics graphics) {
+        for (Obstacle obstacle : obstacleList) {
+            obstacle.renderObstacle(graphics);
         }
     }
 
-    public List<Obstacle> getObstacles() {
-        return obstacles;
+    public List<Obstacle> getObstacleList() {
+        return obstacleList;
     }
 }

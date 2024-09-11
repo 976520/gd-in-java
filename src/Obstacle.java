@@ -1,27 +1,29 @@
 import java.awt.*;
 
 public class Obstacle {
-    private int x, y;
-    private int width = 40, height = 40;
+    private int obstacleXPosition;
+    private int obstacleYPosition;
+    private int obstacleWidth = 40;
+    private int obstacleHeight = 40;
 
-    public Obstacle(int x, int floorY, int floorHeight) {
-        this.x = x;
-        this.y = floorY - height;
+    public Obstacle(int obstacleXPosition, int floorYPosition, int floorHeightValue) {
+        this.obstacleXPosition = obstacleXPosition;
+        this.obstacleYPosition = floorYPosition - obstacleHeight;
     }
 
-    public void update() {
-        x -= 5;
-        if (x < -width) {
-            x = 800;
+    public void moveObstacle() {
+        obstacleXPosition -= 5;
+        if (obstacleXPosition < -obstacleWidth) {
+            obstacleXPosition = 800;
         }
     }
 
-    public void draw(Graphics g) {
-        g.setColor(Color.DARK_GRAY);
-        g.fillPolygon(new int[] {x, x + width / 2, x + width}, new int[] {y + height, y, y + height}, 3);
+    public void renderObstacle(Graphics graphics) {
+        graphics.setColor(Color.DARK_GRAY);
+        graphics.fillPolygon(new int[] {obstacleXPosition, obstacleXPosition + obstacleWidth / 2, obstacleXPosition + obstacleWidth}, new int[] {obstacleYPosition + obstacleHeight, obstacleYPosition, obstacleYPosition + obstacleHeight}, 3);
     }
 
     public Rectangle getBounds() {
-        return new Rectangle(x, y, width, height);
+        return new Rectangle(obstacleXPosition, obstacleYPosition, obstacleWidth, obstacleHeight);
     }
 }
