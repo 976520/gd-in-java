@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GeometryDash extends JPanel implements ActionListener {
     private Timer timer;
@@ -10,6 +12,7 @@ public class GeometryDash extends JPanel implements ActionListener {
     private int attempts;
     private Camera cameraSystem;
     private Floor floorObject;
+    private List<YellowJumpRing> jumpRings;
 
     public GeometryDash() {
         setFocusable(true);
@@ -32,6 +35,8 @@ public class GeometryDash extends JPanel implements ActionListener {
         playerCharacter = new Player();
         obstacleManagerSystem = new ObstacleManager(floorObject.getFloorY(), floorObject.getFloorHeight());
         cameraSystem = new Camera(getWidth());
+        jumpRings = new ArrayList<>();
+
         isGameRunning = true;
     }
 
@@ -46,11 +51,10 @@ public class GeometryDash extends JPanel implements ActionListener {
         drawFloor(g);
         drawAttempts(g);
 
-        for (YellowJumpRing ring : obstacleManagerSystem.getJumpRingList()) {
+        for (YellowJumpRing ring : jumpRings) {
             ring.draw(g);
         }
     }
-
 
     private void renderGameObjects(Graphics g) {
         cameraSystem.translateCamera(g);
@@ -84,7 +88,7 @@ public class GeometryDash extends JPanel implements ActionListener {
             floorObject.updateFloor();
             cameraSystem.updateCamera(playerCharacter.getX());
 
-            for (YellowJumpRing ring : obstacleManagerSystem.getJumpRingList()) {
+            for (YellowJumpRing ring : jumpRings) {
                 ring.update();
             }
 
@@ -92,7 +96,6 @@ public class GeometryDash extends JPanel implements ActionListener {
             repaint();
         }
     }
-
 
     private void detectCollisions() {
         for (Obstacle obstacle : obstacleManagerSystem.getObstacleList()) {
@@ -102,7 +105,7 @@ public class GeometryDash extends JPanel implements ActionListener {
             }
         }
 
-        for (YellowJumpRing ring : obstacleManagerSystem.getJumpRingList()) {
+        for (YellowJumpRing ring : jumpRings) {
             if (ring.isPlayerTouchingRing(playerCharacter)) {
                 playerCharacter.setBoostedJumpAvailable(true);
                 playerCharacter.jump();
@@ -112,7 +115,6 @@ public class GeometryDash extends JPanel implements ActionListener {
             }
         }
     }
-
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Geometry Dash");

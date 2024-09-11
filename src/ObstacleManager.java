@@ -21,6 +21,8 @@ public class ObstacleManager {
         obstacles.add(new Obstacle(900, floorY, floorHeight));
         obstacles.add(new Obstacle(1400, floorY, floorHeight));
         jumpRings.add(new YellowJumpRing(1400, floorY));
+        jumpRings.add(new YellowJumpRing(500, 250));
+        jumpRings.add(new YellowJumpRing(700, 250));
         obstacles.add(new Obstacle(1440, floorY, floorHeight));
         obstacles.add(new Obstacle(1480, floorY, floorHeight));
 
