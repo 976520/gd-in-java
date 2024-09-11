@@ -4,7 +4,7 @@ public class Obstacle {
     private int x, y;
     private int width = 40, height = 40;
 
-    public Obstacle(int x, int floorY) {
+    public Obstacle(int x, int floorY, int floorHeight) {
         this.x = x;
         this.y = floorY - height;
     }
