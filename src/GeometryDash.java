@@ -5,110 +5,131 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GeometryDash extends JPanel implements ActionListener {
-    private Timer timer;
-    private Player playerCharacter;
-    private ObstacleManager obstacleManagerSystem;
-    private boolean isGameRunning;
-    private int attempts;
-    private Camera cameraSystem;
-    private Floor floorObject;
+    private static final int TIMER_DELAY = 15;
+    private Timer gameTimer;
+    private Player player;
+    private ObstacleManager obstacleManager;
+    private Camera camera;
+    private Floor floor;
     private List<YellowJumpRing> jumpRings;
+    private boolean isRunning;
+    private int attemptCount;
 
     public GeometryDash() {
         setFocusable(true);
         setPreferredSize(new Dimension(800, 400));
         initializeGame();
-        timer = new Timer(15, this);
-        timer.start();
+        gameTimer = new Timer(TIMER_DELAY, this);
+        gameTimer.start();
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_SPACE && isGameRunning) {
-                    playerCharacter.jump();
+                if (e.getKeyCode() == KeyEvent.VK_SPACE && isRunning) {
+                    player.jump();
                 }
             }
         });
     }
 
-    public void initializeGame() {
-        floorObject = new Floor(300, 100, getWidth());
-        playerCharacter = new Player();
-        obstacleManagerSystem = new ObstacleManager(floorObject.getFloorY(), floorObject.getFloorHeight());
-        cameraSystem = new Camera(getWidth());
+    private void initializeGame() {
+        floor = new Floor(300, 100, getWidth());
+        player = new Player();
+        obstacleManager = new ObstacleManager(floor.getFloorY(), floor.getFloorHeight());
+        camera = new Camera(getWidth());
         jumpRings = new ArrayList<>();
+        isRunning = true;
+        // Initialize jump rings at specific positions
+        initializeJumpRings();
+    }
 
-        isGameRunning = true;
+    private void initializeJumpRings() {
+        jumpRings.add(new YellowJumpRing(500, 250));
+        jumpRings.add(new YellowJumpRing(700, 250));
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (isGameRunning) {
+        if (isRunning) {
             renderGameObjects(g);
         } else {
             resetGame();
         }
         drawFloor(g);
         drawAttempts(g);
-
-        for (YellowJumpRing ring : jumpRings) {
-            ring.draw(g);
-        }
+        drawJumpRings(g);
     }
 
     private void renderGameObjects(Graphics g) {
-        cameraSystem.translateCamera(g);
-
-        playerCharacter.render(g);
-        obstacleManagerSystem.renderObstacles(g);
-
-        ((Graphics2D) g).translate(cameraSystem.getX(), 0);
+        camera.translateCamera(g);
+        player.render(g);
+        obstacleManager.renderObstacles(g);
+        ((Graphics2D) g).translate(camera.getX(), 0);
     }
 
     private void drawFloor(Graphics g) {
-        floorObject.renderFloor(g, cameraSystem.getX());
+        floor.renderFloor(g, camera.getX());
     }
 
     private void drawAttempts(Graphics g) {
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.PLAIN, 24));
-        g.drawString("Attempt: " + attempts, 10 - cameraSystem.getX(), 30);
+        g.drawString("Attempt: " + attemptCount, 10 - camera.getX(), 30);
+    }
+
+    private void drawJumpRings(Graphics g) {
+        for (YellowJumpRing ring : jumpRings) {
+            ring.draw(g);
+        }
     }
 
     private void resetGame() {
-        attempts++;
+        attemptCount++;
         initializeGame();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (isGameRunning) {
-            playerCharacter.update();
-            obstacleManagerSystem.updateObstacles();
-            floorObject.updateFloor();
-            cameraSystem.updateCamera(playerCharacter.getX());
-
-            for (YellowJumpRing ring : jumpRings) {
-                ring.update();
-            }
-
+        if (isRunning) {
+            updateGameObjects();
             detectCollisions();
             repaint();
         }
     }
 
-    private void detectCollisions() {
-        for (Obstacle obstacle : obstacleManagerSystem.getObstacleList()) {
-            if (obstacle.getBounds().intersects(playerCharacter.getBounds())) {
-                isGameRunning = false;
-                break;
-            }
-        }
+    private void updateGameObjects() {
+        player.update();
+        obstacleManager.updateObstacles();
+        floor.updateFloor();
+        camera.updateCamera(player.getX());
 
         for (YellowJumpRing ring : jumpRings) {
-            if (ring.isPlayerTouchingRing(playerCharacter)) {
-                playerCharacter.setBoostedJumpAvailable(true);
-                playerCharacter.jump();
+            ring.update();
+        }
+    }
+
+    private void detectCollisions() {
+        if (isPlayerCollidingWithObstacle()) {
+            isRunning = false;
+            return;
+        }
+        handleJumpRingCollisions();
+    }
+
+    private boolean isPlayerCollidingWithObstacle() {
+        for (Obstacle obstacle : obstacleManager.getObstacles()) {
+            if (obstacle.getBounds().intersects(player.getBounds())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    private void handleJumpRingCollisions() {
+        for (YellowJumpRing ring : jumpRings) {
+            if (ring.isPlayerTouchingRing(player)) {
+                player.getBounds();
                 ring.setTouched(true);
             } else {
                 ring.setTouched(false);
