@@ -2,11 +2,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Spike {
+public class FlatSpike {
     private int x, y;
     public int width = 40, height = 40;
 
-    public Spike(int x, int floorY, int floorHeight) {
+    public FlatSpike(int x, int floorY, int floorHeight) {
         this.x = x;
         this.y = floorY - height;
 

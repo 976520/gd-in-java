@@ -38,7 +38,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         camera = new Camera(getWidth());
         jumpRings = new ArrayList<>();
         isRunning = true;
-        // Initialize jump rings at specific positions
         initializeJumpRings();
     }
 
@@ -117,7 +116,7 @@ public class GeometryDash extends JPanel implements ActionListener {
     }
 
     private boolean isPlayerCollidingWithObstacle() {
-        for (Spike obstacle : obstacleManager.getObstacles()) {
+        for (Spike obstacle : obstacleManager.getSpike()) {
             if (obstacle.getBounds().intersects(player.getBounds())) {
                 return true;
             }
